@@ -1,0 +1,559 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+//font-family: 'Open Sans', sans-serif;
+
+@font-face {
+	font-family: "ChampagneBold";
+	src: url("../../fonts/ChampagneLimousines-Bold.eot");
+	src: url("../../fonts/ChampagneLimousines-Bold.eot?#iefix") format("embedded-opentype"),
+		url("../../fonts/ChampagneLimousines-Bold.woff") format("woff"),
+		url("../../fonts/ChampagneLimousines-Bold.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "FreestyleScript";
+	src: url("../../fonts/Freestyle Script Regular.eot");
+	src: local("☺"), url("../../fonts/Freestyle Script Regular.woff") format("woff"),
+		url("../../fonts/Freestyle Script Regular.ttf") format("truetype"),
+		url("../../fonts/Freestyle Script Regular.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* font-family: "MyriadProRegular"; */
+@font-face {
+	font-family: "MyriadProRegular";
+	src: url("../fonts/MyriadProRegular/MyriadProRegular.eot");
+	src: url("../fonts/MyriadProRegular/MyriadProRegular.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"),
+		url("../fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "Open Sans", sans-serif;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1200;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 811.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+body {
+	color: #000;
+	font-size: 14px;
+	&.lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	&.loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms.scss";
+@import "ui.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "datepicker.scss";
+//@import "fontawesome.scss";
+//@import "popover.min.scss";
+//@import "baguetteBox.scss";
+//@import "pagging.scss";
+//@import "icons.scss";
+@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+//====================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+.slider {
+	margin: 100px 0px 0px 0px;
+	background: url("../../img/slider-bg.png") center/cover no-repeat;
+	@media (max-width: $md3+px) {
+		background: url("../../img/slider-bg.png") 60% 0 / cover no-repeat;
+	}
+	@media (max-width: 768px) {
+		margin: 50px 0px 0px 0px;
+	}
+
+	&__container {
+		max-width: 877px;
+		margin: 0 auto;
+	}
+	&__body {
+		margin: 0px -15px;
+		position: relative;
+		left: 14%;
+
+		padding: 100px 0px 109px 0px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		@media (max-width: $md1+px) {
+			left: 5%;
+		}
+		@media (max-width: $md2+px) {
+			left: 0;
+			justify-content: center;
+		}
+		@media (max-width: $md3+px) {
+			padding: 0px 0px;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: column;
+			margin: 0px 0px;
+		}
+	}
+
+	&__form {
+		padding: 0px 15px;
+
+		@media (max-width: $md3+px) {
+			order: 2;
+			padding: 0px 10px;
+			margin: 0px 0px 25px 0px;
+		}
+	}
+
+	&__items-text {
+		padding: 0px 15px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		@media (max-width: $md3+px) {
+			order: 1;
+
+			margin: 0px 0px 25px 0px;
+		}
+	}
+
+	&__title {
+		white-space: pre-line;
+		color: #ffffff;
+		font-size: 48px;
+		font-weight: 700;
+		line-height: 72px;
+		text-transform: uppercase;
+		@media (max-width: $md3+px) {
+			line-height: 55px;
+		}
+	}
+
+	&__text {
+		white-space: pre-line;
+		color: #ffffff;
+		font-family: "FreestyleScript";
+		font-size: 40px;
+		font-weight: 400;
+	}
+}
+
+.form {
+	&__colum {
+		min-width: 300px;
+		padding: 40px 40px 35px 30px;
+		box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.15);
+		border-radius: 20px;
+		background-color: #ffffff;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__title {
+		color: #5363db;
+		font-size: 26px;
+		font-weight: 400;
+		font-family: "Open Sans", sans-serif;
+		margin: 0px 0px 8.5px 0px;
+	}
+
+	&__item {
+		margin: 0px 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__select {
+		cursor: pointer;
+		padding: 9px 17px;
+		margin: 8.5px 0px;
+		color: #888888;
+		border-radius: 8px;
+		background-color: #f2f2f2;
+		position: relative;
+	}
+	&__input {
+		padding: 9px 17px;
+		margin: 8.5px 0px;
+		color: #888888;
+		border-radius: 8px;
+		background-color: #f2f2f2;
+	}
+
+	&__link {
+		margin: 21.5px 0px 0px 0px;
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+.link {
+	&__btn {
+		flex: 1 1 auto;
+		max-width: 170px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+		border-radius: 8px;
+		background-color: #5b6ceb;
+		padding: 15px 0px;
+		color: #ffffff;
+		font-size: 16px;
+		font-weight: 700;
+	}
+}
+
+.styledSelect {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 9px 17px;
+	margin: 8.5px 0px;
+	color: #888888;
+	border-radius: 8px;
+	background-color: #f2f2f2;
+}
+
+.styledSelect:after {
+	content: "";
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-color: #636363 transparent transparent transparent;
+	position: absolute;
+	top: 15px;
+	right: 10px;
+}
+.styledSelect:active,
+.styledSelect.active {
+	background-color: #f2f2f2;
+}
+.options {
+	display: none;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	z-index: 5;
+	margin: 0 0;
+	margin: -14px 0px 0px 0px;
+	list-style: none;
+}
+.options li {
+	&:first-child {
+		display: none;
+		color: black;
+	}
+	&:nth-child(2) {
+		padding: 14.5px 17px 8.5px 17px;
+	}
+	&:last-child {
+		border-radius: 0px 0px 8px 8px;
+	}
+	padding: 9px 17px;
+	color: #888888;
+	background-color: #f2f2f2;
+	position: relative;
+}
+.options li:hover {
+	background-color: rgba(83, 99, 219, 1);
+	color: white;
+}
+
+//  our-classes
+
+.our-classes {
+	&__body {
+		padding: 125px 0px 0px 0px;
+	}
+
+	&__title-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__title {
+		margin: 0px 0px 0px 0px;
+	}
+
+	&__text {
+		color: #777777;
+		font-family: "FreestyleScript";
+		font-size: 41px;
+		font-weight: 400;
+		line-height: 61.49px;
+		margin: 0px 0px 75px 0px;
+	}
+
+	&__classes {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: -12.5px 0px;
+		@media (max-width: $md1+px) {
+			justify-content: center;
+		}
+	}
+}
+
+.title-main {
+	color: #5b6ceb;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 45px;
+	text-transform: uppercase;
+}
+.classes {
+	&__items {
+		margin: 12.5px 0;
+		max-width: 585px;
+		box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+		border-radius: 8px;
+		overflow: hidden;
+		display: flex;
+	}
+
+	&__title-text {
+		padding: 49px 48px 29px 29px;
+	}
+
+	&__title {
+		color: #777777;
+
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 45px;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		margin: 10px 0px 0px 0px;
+	}
+
+	&__trainer {
+		color: #999999;
+		margin: 4px 0px 0px 0px;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 22px;
+	}
+}
+
+.text-main {
+	color: #555555;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 22px;
+}
+
+// galery
+.galery {
+	&__body {
+		padding: 105px 0px 0px 0px;
+		max-width: 100vw;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	& a {
+		position: relative;
+		display: block;
+	}
+
+	& a:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		max-width: 475px;
+		max-height: 350px;
+		background-color: rgba(91, 108, 235, 0.8);
+
+		opacity: 0;
+	}
+	& a:before {
+		content: "";
+		z-index: 3;
+		width: 57px;
+		height: 57px;
+		box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.1);
+		position: absolute;
+		top: 43%;
+		left: 43%;
+		right: 0;
+		bottom: 0;
+		background: #ffffff url("../../img/gallery/icon__s.svg") center no-repeat;
+		opacity: 0;
+		border-radius: 50%;
+	}
+	& a:hover:before,
+	& a:hover:after {
+		opacity: 1;
+	}
+	& img {
+		max-width: 475px;
+		object-fit: cover;
+	}
+}
+
+// about
+
+.about {
+	&__body {
+		padding: 100px 0px 0px 0px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	&__title-text {
+		flex: 0 1 50%;
+		padding: 24px 140px 24px 0px;
+		@media (max-width: $md1+px) {
+			flex: 1 1 auto;
+			padding: 24px 0px 24px 0px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+
+	&__title {
+		margin: 0px 0px 30px 0px;
+	}
+
+	&__slider {
+		min-width: 0;
+		position: relative;
+		max-width: 570px;
+	}
+
+	&__item-slider {
+	}
+	.slick-arrow {
+		position: absolute;
+		top: 50%;
+		margin: -25px 0px 0px 0px;
+		z-index: 10;
+		font-size: 0;
+	}
+	.slick-arrow.slick-prev {
+		left: -25px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.1);
+		background: #ffffff url("../../img/icons/arrow_left.svg") center center no-repeat;
+	}
+
+	.slick-arrow.slick-next {
+		right: -25px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.1);
+		background: #ffffff url("../../img/icons/arrow__right.svg") center center no-repeat;
+	}
+}
+
+/* Ограничивающая оболочка */
+.slick-list {
+	box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+	border-radius: 8px;
+	background-color: #d7d7d7;
+	max-width: 570px;
+	border-radius: 10px;
+	overflow: hidden;
+	max-height: 300px;
+	& img {
+		width: 100%;
+		object-fit: cover;
+	}
+}
+/* Лента слайдов */
+.slick-track {
+	display: flex;
+}

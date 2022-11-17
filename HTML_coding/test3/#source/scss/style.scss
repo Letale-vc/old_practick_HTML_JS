@@ -1,0 +1,715 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+@font-face {
+	font-family: "SegoeUIRegular";
+	src: url("../../fonts/SegoeUIRegular.eot");
+	src: url("../../fonts/SegoeUIRegular.eot?#iefix") format("embedded-opentype"),
+		url("../../fonts/SegoeUIRegular.woff") format("woff"), url("../../fonts/SegoeUIRegular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "SegoeUILight";
+	src: url("../../fonts/SegoeUILight.eot");
+	src: url("../../fonts/SegoeUILight.eot?#iefix") format("embedded-opentype"),
+		url("../../fonts/SegoeUILight.woff") format("woff"), url("../../fonts/SegoeUILight.ttf") format("truetype");
+}
+//<Подключаем шрифты>=======================================================================================
+
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "Arial";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1000;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 825.98;
+$md4: 500.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+body {
+	color: #000;
+	font-size: 14px;
+	&.lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	&.loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms.scss";
+@import "ui.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "datepicker.scss";
+//@import "fontawesome.scss";
+//@import "popover.min.scss";
+//@import "baguetteBox.scss";
+//@import "pagging.scss";
+//@import "icons.scss";
+@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+//====================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+// header
+.header {
+	padding-top: 29px;
+
+	&__row {
+		display: flex;
+	}
+
+	&__nav {
+		flex: 1 1 auto;
+		display: flex;
+		justify-content: flex-end;
+		align-self: flex-end;
+		flex-wrap: wrap;
+	}
+}
+
+.nav {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		& li {
+			margin: 0px 0px 0px 5px;
+
+			&:nth-child(1) {
+				border-bottom: 1px solid #2d89ef;
+				& a:hover {
+					color: #2d89ef;
+				}
+			}
+			&:nth-child(2) {
+				position: relative;
+				& a:hover {
+					color: #603cba;
+				}
+				&:after {
+					content: "";
+					width: 100%;
+					height: 6px;
+					position: absolute;
+					background: url("../../img/header/border_bb2.png") 0 0 no-repeat;
+					bottom: -5px;
+					left: 0;
+				}
+			}
+			&:nth-child(3) {
+				border-bottom: 1px solid #01a31c;
+				& a:hover {
+					color: #01a31c;
+				}
+			}
+			&:nth-child(4) {
+				border-bottom: 1px solid #d44a26;
+				& a:hover {
+					color: #d44a26;
+				}
+			}
+			&:nth-child(5) {
+				border-bottom: 1px solid #f0a427;
+				& a:hover {
+					color: #f0a427;
+				}
+			}
+			& a {
+				padding: 14px 21px;
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				color: #595756;
+				font-family: "SegoeUIRegular";
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+// what-them
+.what-them {
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		padding: 28px 0px 0px 0px;
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__title {
+		flex: 0 1 auto;
+		& h1 {
+			font-family: "SegoeUILight";
+			font-size: 36px;
+			color: #595756;
+			@media (max-width: $md4+px) {
+				font-size: 1.5rem;
+			}
+		}
+		@media (max-width: $md3+px) {
+			flex: 0 0 auto;
+		}
+	}
+
+	&__price-search {
+		flex: 1 1 auto;
+		max-width: 486px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		@media (max-width: $md2+px) {
+			justify-content: flex-end;
+			align-items: flex-end;
+		}
+		@media (max-width: $md3+px) {
+			align-items: center;
+			justify-content: space-around;
+			margin: 28px -5px;
+		}
+		@media (max-width: $md4+px) {
+			margin: 28px 0px -10px 0px;
+		}
+	}
+}
+
+.price-search {
+	&__price {
+		flex: 0 1 auto;
+
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 14px 0px;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0px;
+			padding: 0 5px;
+		}
+		@media (max-width: $md4+px) {
+			padding: 10px 0px;
+		}
+		& a {
+			padding: 13px 19px 13px 43px;
+			width: 226px;
+			display: inline-block;
+			display: flex;
+			align-items: center;
+			position: relative;
+			background-color: #0064cd;
+			font-family: "Arial";
+			font-size: 12px;
+			text-decoration: underline;
+			color: #ffffff;
+			&:before {
+				content: "";
+				position: absolute;
+				background: url("../../img/price-search/price_icon.svg") 0 0 no-repeat;
+				left: 6%;
+				top: 25%;
+				width: 19px;
+				height: 20px;
+				z-index: 30;
+			}
+		}
+	}
+	&__search {
+		flex: 0 1 auto;
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $md3+px) {
+			margin: 0px;
+			padding: 0 5px;
+		}
+		@media (max-width: $md4+px) {
+			padding: 10px 0px;
+		}
+	}
+}
+
+.search {
+	&__input {
+		width: 192.61px;
+		border: 1px solid #cccccc;
+		border-right: none;
+		flex: 1 1 auto;
+		padding: 11px 13px 11px 15px;
+		color: #898989;
+		font-family: "Arial";
+		font-size: 12px;
+	}
+
+	&__icon {
+		border: 1px solid #cccccc;
+		border-left: none;
+		padding: 0px 0px;
+		background: #fff;
+	}
+}
+
+.fa-search {
+	color: #cccccc;
+	background: #fff;
+	padding: 0px 15px 0px 5px;
+}
+
+// nav + product
+
+.nav-imgproduct {
+	&__body {
+		padding: 20px 0px 0px 0px;
+		display: flex;
+		justify-content: space-between;
+		margin: 0px -14px;
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+			margin: 0px -14px;
+		}
+	}
+
+	&__nav {
+		padding: 0px 14px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex: 1 1 auto;
+		margin: -14px -14px;
+	}
+
+	&__img {
+		flex: 0 1 auto;
+		padding: 0px 14px;
+
+		@media (max-width: $md3+px) {
+			margin-top: 28px;
+		}
+	}
+	&__img-border {
+		max-width: 486px;
+		height: 310px;
+		border: 3px solid #f1f1f1;
+		padding: 32px 19px 35px 19px;
+	}
+}
+
+.ibg {
+	width: 448px;
+	height: 243px;
+	@media (max-width: $md4+px) {
+		width: 100vw;
+		height: 30vh;
+	}
+
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.ibg img {
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.nav {
+	&__top {
+		flex: 1 1 auto;
+		padding: 14px 14px;
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 0px 0px;
+		}
+		& a {
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+			position: relative;
+			background: #603cba;
+			color: #ffffff;
+			font-family: "SegoeUIRegular";
+			font-size: 18px;
+			padding: 15px 5px 70px 72px;
+			&:before {
+				content: "";
+				position: absolute;
+				background: url("../../img/nav-imgproduct/nav__top.svg") 0 0 no-repeat;
+				left: 3%;
+				width: 39px;
+				height: 42px;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				background: url("../../img/nav-imgproduct/arrow.svg") center 45% no-repeat;
+				width: 27px;
+				height: 27px;
+				border: 2px solid #ffffff;
+				border-radius: 50%;
+				right: 3%;
+				bottom: 11%;
+			}
+		}
+	}
+
+	&__bottom {
+		flex: 0 1 auto;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 14px;
+		margin: 0 -14px;
+		flex-wrap: wrap;
+	}
+
+	&__bottom-left {
+		margin: -14px -14px;
+		padding: 14px 14px;
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__bottom-right {
+		padding: 14px 14px;
+		flex: 1 1 auto;
+		a {
+			width: 100%;
+			height: 100%;
+			background-color: #ffc40d;
+			display: inline-block;
+			padding: 17px 5px 15px 66px;
+			color: #ffffff;
+			font-family: "SegoeUIRegular";
+			font-size: 18px;
+			line-height: 18px;
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				background: url("../../img/nav-imgproduct/video.svg") 0 0 no-repeat;
+				left: 10%;
+				width: 39px;
+				height: 42px;
+				@media (max-width: $md2+px) {
+					left: 5%;
+				}
+				@media (max-width: $md4+px) {
+					left: 5%;
+				}
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				background: url("../../img/nav-imgproduct/arrow.svg") center 45% no-repeat;
+				width: 27px;
+				height: 27px;
+				border: 2px solid #ffffff;
+				border-radius: 50%;
+				right: 10%;
+				bottom: 11%;
+				@media (max-width: $md2+px) {
+					right: 3%;
+				}
+			}
+			& span {
+				display: block;
+				font-size: 12px;
+			}
+		}
+	}
+}
+.bottom-left {
+	&__downdload {
+		padding: 14px 14px;
+		flex: 0 1 auto;
+		& a {
+			background-color: #00a300;
+			display: inline-block;
+			width: 100%;
+			padding: 17px 5px 15px 70px;
+			color: #ffffff;
+			font-family: "SegoeUIRegular";
+			font-size: 18px;
+			line-height: 18px;
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				background: url("../../img/nav-imgproduct/dwnlo.svg") 0 0 no-repeat;
+				left: 5%;
+				width: 39px;
+				height: 42px;
+			}
+			& span {
+				display: block;
+				font-size: 12px;
+			}
+		}
+	}
+
+	&__example {
+		padding: 14px 14px;
+		flex: 0 1 auto;
+		a {
+			width: 100%;
+			background-color: #2b5797;
+			display: inline-block;
+			padding: 17px 5px 17px 71px;
+			color: #ffffff;
+			font-family: "SegoeUIRegular";
+			font-size: 18px;
+			line-height: 18px;
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				background: url("../../img/nav-imgproduct/exemple.svg") 0 0 no-repeat;
+				left: 5%;
+				width: 39px;
+				height: 42px;
+			}
+			& span {
+				margin: 2px 0px 0px 0px;
+				text-transform: uppercase;
+				display: block;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+.dec-border {
+	border: 1px solid #cccccc;
+	margin: 0px 0px 28px 0px;
+	padding: 0px 32px 0px 15px;
+}
+.description {
+	&__body {
+		padding: 14px 0px 0px 0px;
+	}
+
+	&__items {
+		& h3 {
+			font-family: "SegoeUILight";
+			font-size: 24px;
+			line-height: 50px;
+			line-height: 50px;
+		}
+		& h2 {
+			font-family: "SegoeUILight";
+			font-size: 24px;
+			line-height: 50px;
+			color: #000000;
+			margin: 0px 0px 10px 0px;
+		}
+		& p {
+			margin: 0px 0px 28px 0px;
+			color: #000000;
+			font-family: "SegoeUIRegular";
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
+}
+
+.decriprtion {
+	&__border-items {
+		& :nth-child(1) {
+			border-left: 19px solid #00a300;
+			& h3 {
+				color: #00a300;
+				border: none;
+			}
+			& p {
+				border: none;
+			}
+		}
+		& :nth-child(2) {
+			border-left: 19px solid #ffc40d;
+			& h3 {
+				color: #ffc40d;
+				border: none;
+			}
+			& p {
+				border: none;
+			}
+		}
+		& :nth-child(3) {
+			border-left: 19px solid #2d89ef;
+			& h3 {
+				color: #2d89ef;
+				border: none;
+			}
+			& p {
+				border: none;
+			}
+		}
+	}
+}
+
+// form
+
+.form {
+	&__body {
+	}
+
+	&__title {
+		margin: 0px 0px 0px 0px;
+		background: url("../../img/form/form-bg.png") 0 0 no-repeat;
+
+		display: block;
+		font-family: "SegoeUILight";
+		font-size: 18px;
+		line-height: 18px;
+		color: #ffffff;
+		padding: 16px 0px 22px 52px;
+		position: relative;
+		background-color: #f1f1f1;
+		&:before {
+			content: "";
+			position: absolute;
+			background: url("../../img/form/icon_form.svg") 0 0 no-repeat;
+			width: 31px;
+			height: 32px;
+			left: 1.5%;
+			top: 30%;
+		}
+		& span {
+			display: block;
+		}
+	}
+
+	&__form-items {
+		background-color: #f1f1f1;
+		display: flex;
+		padding: 18px 18px;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+}
+
+.form-items {
+	&__form-main {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__select {
+		width: 310px;
+		height: 31px;
+		border: 2px solid #bababa;
+		background-color: #ffffff;
+		margin: 0px 0px 18px 0px;
+	}
+
+	&__name {
+		padding: 10px 10px 10px 10px;
+		width: 310px;
+		height: 31px;
+		border: 2px solid #bababa;
+		background-color: #ffffff;
+		margin: 0px 0px 18px 0px;
+	}
+	&__email {
+		padding: 10px 10px 10px 10px;
+		width: 310px;
+		height: 31px;
+		border: 2px solid #bababa;
+		margin: 0px 0px 18px 0px;
+	}
+
+	&__phone {
+		padding: 10px 10px 10px 10px;
+		width: 310px;
+		height: 31px;
+		border: 2px solid #bababa;
+		margin: 0px 0px 18px 0px;
+	}
+
+	&__form-after {
+		display: flex;
+		flex-direction: column;
+		padding: 0px 0px;
+	}
+
+	&__form-text {
+		width: 638px;
+		height: 129px;
+		border: 2px solid #bababa;
+		background-color: #ffffff;
+		margin: 0px 0px 18px 0px;
+	}
+
+	&__btn {
+		text-align: center;
+		width: 114px;
+		height: 31px;
+		background-color: #c3325f;
+		font-family: "SegoeUIRegular";
+		font-size: 12px;
+		color: #ffffff;
+	}
+}
+.input {
+}
+.phone {
+}
+.btn {
+}

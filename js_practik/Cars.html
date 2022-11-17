@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Гонки</title>
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+	<script>
+		// Здесь будет JavaScript-код
+		var Car = function (x, y, speed) {
+			this.x = x;
+			this.y = y;
+			this.draw()
+			this.speed = speed
+			
+		};
+		function randomspeed(rspeed) {
+			return Math.floor(Math.random() * rspeed)
+		}
+		Car.prototype.draw = function () {
+			var carHtml = '<img src="car.png">';
+			this.carElement = $(carHtml);
+			this.carElement.css({
+				position: "absolute",
+				left: this.x,
+				top: this.y
+			});
+			$("body").append(this.carElement);
+
+		};
+
+		Car.prototype.moveRight = function () {
+			this.x += randomspeed(this.speed);
+			this.carElement.css({
+				left: this.x,
+				top: this.y
+			});
+		};
+		Car.prototype.moveLeft = function () {
+			this.x -= randomspeed(speed);
+			this.carElement.css({
+				left: this.x,
+				top: this.y
+			});
+		};
+		Car.prototype.moveUp = function () {
+			this.y -= randomspeed(speed);
+			this.carElement.css({
+				left: this.x,
+				top: this.y
+			});
+		};
+		Car.prototype.moveDown = function () {
+			this.y += randomspeed(speed);
+			this.carElement.css({
+				left: this.x,
+				top: this.y
+			});
+		};
+
+		var tesla = new Car(20, 20, 10);
+		var nissan = new Car(100, 200, 10);
+
+
+		setInterval(nissan.moveRight.bind(nissan), 30)
+		setInterval(tesla.moveRight.bind(tesla), 30)
+
+
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,803 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+@font-face {
+	font-family: "Mistral";
+	src: local("Mistral"), url("https://nomail.com.ua/files/woff/f26ce1e6e199f032cfc8428cf52ce073.woff") format("woff");
+}
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "Roboto Slab";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+body {
+	color: #000;
+	font-size: 14px;
+	&.lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	&.loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+//@import "forms.scss";
+//@import "ui.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "datepicker.scss";
+//@import "fontawesome.scss";
+//@import "popover.min.scss";
+//@import "baguetteBox.scss";
+//@import "pagging.scss";
+//@import "icons.scss";
+//@import "popup.scss";
+//@import "header.scss";
+//@import "footer.scss";
+//@import "home.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+//====================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.footer {
+	background-color: #f5f6fb;
+	&__body {
+		padding: 80px 0 0 0;
+	}
+
+	&__top {
+		display: flex;
+		padding: 0px 0px 40px 0px;
+
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@media (max-width: $md3+px) {
+			justify-content: center;
+		}
+	}
+
+	&__item {
+		margin: 0px -5px;
+		padding: 0px 5px;
+		flex: 0 1 25%;
+		@media (max-width: $md1+px) {
+			flex: 0 1 33.3333%;
+		}
+		@media (max-width: $md3+px) {
+			&:first-child {
+				flex: 0 1 100%;
+				margin: 0px 0px 25px 0px;
+			}
+		}
+		&:nth-child(2) {
+			padding: 0px 0px 0px 129px;
+			@media (max-width: $md1+px) {
+				padding: 0px 0px 0px 100px;
+			}
+			@media (max-width: $md2+px) {
+				padding: 0px 0px 0px 70px;
+			}
+		}
+	}
+
+	&__logo {
+		background-color: #f5f6fb;
+	}
+
+	&__text {
+		color: #707070;
+		font-family: "PT Sans";
+		font-size: 15px;
+		line-height: 28px;
+		font-weight: bold;
+	}
+
+	&__title {
+		color: #323232;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 30px;
+		margin: 0px 0px 36px 0px;
+	}
+
+	&__nav {
+		line-height: 35px;
+	}
+	&__input-mail {
+		display: flex;
+	}
+
+	&__input {
+		padding: 0px 0px 0px 13px;
+		font-family: "PT Sans";
+		width: 245px;
+		height: 45px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	&__button {
+		width: 45px;
+		height: 45px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		border-left: none;
+		background: #00b894 url("../../img/footer/button_img.png") center no-repeat;
+	}
+
+	&__bottom {
+		padding: 35px 0px;
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		color: #707070;
+		font-family: "PT Sans";
+		font-size: 15px;
+	}
+
+	&__cop {
+	}
+
+	&__pay-method {
+		display: flex;
+	}
+}
+.pay-method {
+	&__text {
+		position: relative;
+		top: 5px;
+	}
+
+	&__icon {
+		margin: 0px 0px 0px 15px;
+		padding: 5px 12px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		background-color: #f5f6fb;
+	}
+}
+
+.header {
+	min-height: 100vh;
+	background: url("../../img/header/header-bg.png") center / cover no-repeat fixed;
+	padding: 53px 0px 0px 0px;
+
+	&__body {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__top-nav {
+		@include flexbox();
+		flex: 0 0 auto;
+	}
+
+	&__bottom-who {
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+	}
+}
+
+.top-nav {
+	&__logo {
+		flex: 0 0 150px;
+	}
+
+	&__nav-menu {
+		flex: 1 1 auto;
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+.nav-menu {
+	&__itemm-main {
+		display: flex;
+	}
+
+	&__item-second {
+		color: #fefeff;
+		font-family: "Roboto Slab";
+		font-size: 14px;
+		text-align: center;
+		line-height: 22px;
+		width: 150px;
+		height: 45px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		background-color: #00b894;
+		padding: 10px 0px 0px 0px;
+	}
+}
+.item-main {
+	&__nav-list {
+		font-weight: bold;
+		color: #323232;
+		font-family: "Roboto Slab";
+		font-size: 14px;
+		margin: 0px 40px 0px 0px;
+		line-height: 40px;
+	}
+}
+.bottom-who {
+	&__name {
+		font-family: "Roboto Slab";
+		font-size: 28px;
+		line-height: 22px;
+		color: #323232;
+		margin: 0px 0px 27px 0px;
+		& span {
+			color: #00b894;
+		}
+	}
+	&__job {
+		color: #323232;
+		font-family: "Roboto Slab";
+		font-size: 48px;
+		font-weight: 700;
+		line-height: 40px;
+		margin: 0px 0px 50px 0px;
+	}
+
+	&__text {
+		max-width: 650px;
+		color: #707070;
+		font-family: "PT Sans";
+		font-size: 16px;
+		line-height: 30px;
+		margin: 0px 0px 50px 0px;
+	}
+
+	&__link {
+		display: flex;
+	}
+
+	&__link-item {
+		text-align: center;
+		margin: 0px 30px 0px 0px;
+		color: #ffffff;
+		font-family: "Roboto Slab";
+		font-size: 14px;
+		line-height: 45px;
+		width: 180px;
+		height: 45px;
+		background-color: #323232;
+		@include anim(0.3s, 0s);
+
+		&:hover {
+			@include anim(0.5s, 0s);
+			background-color: #00b894;
+		}
+	}
+}
+//  block about
+.about {
+	&__body {
+		display: flex;
+		padding: 150px 0px 150px 0px;
+	}
+
+	&__description {
+		max-width: 721px;
+		@media (max-width: $md2+px) {
+			max-width: 60%;
+		}
+	}
+
+	&__progress {
+		flex: 1 1 auto;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
+
+.description {
+	&__title {
+		color: #323232;
+		font-size: 22px;
+		margin: 0px 0px 60px 0px;
+		position: relative;
+		padding: 0px 0px 15px 0px;
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			width: 50px;
+			height: 2px;
+			background-color: #00b894;
+			left: 0;
+		}
+	}
+
+	&__service {
+		color: #323232;
+		font-size: 36px;
+		font-weight: 700;
+		line-height: 50px;
+		margin: 0px 0px 45px 0px;
+
+		& span {
+			background: url("../../img/about/rectangle-3-copy.png") 0 90% no-repeat;
+		}
+	}
+
+	&__text {
+	}
+}
+.text-all {
+	color: #707070;
+	font-family: "PT Sans";
+	font-size: 15px;
+	line-height: 28px;
+}
+.progress {
+	&__clients {
+		width: 200px;
+		height: 200px;
+		background-color: #be2edd;
+		align-items: center;
+		flex-direction: column;
+		display: flex;
+		border-radius: 50%;
+		justify-content: center;
+		@media (max-width: $md2+px) {
+			width: 150px;
+			height: 150px;
+		}
+	}
+
+	&__items {
+		color: #ffffff;
+		font-family: "Roboto Slab";
+		font-size: 36px;
+		font-weight: 700;
+		line-height: 28px;
+	}
+
+	&__what {
+		color: #ffffff;
+		font-family: "PT Sans";
+		font-size: 16px;
+		line-height: 28px;
+	}
+
+	&__clients-f {
+		width: 200px;
+		height: 200px;
+		background-color: #f9ca24;
+		align-items: center;
+		flex-direction: column;
+		display: flex;
+		border-radius: 50%;
+		justify-content: center;
+		@media (max-width: $md2+px) {
+			width: 150px;
+			height: 150px;
+		}
+	}
+
+	&__project-c {
+		position: relative;
+		width: 200px;
+		height: 200px;
+		background-color: #ff7675;
+		align-items: center;
+		flex-direction: column;
+		display: flex;
+		border-radius: 50%;
+		justify-content: center;
+		bottom: 18%;
+		@media (max-width: $md2+px) {
+			width: 150px;
+			height: 150px;
+			bottom: 28%;
+		}
+	}
+}
+
+//services
+.services {
+	background-color: #f5f6fb;
+
+	&__body {
+		padding: 145px 0px 145px 0px;
+	}
+
+	&__title {
+		margin: 0px 0px 75px 0px;
+		text-align: center;
+		color: #323232;
+		font-size: 48px;
+		font-weight: 700;
+		& span {
+			background: url("../../img/service/Text_bg.png") center 85% no-repeat;
+		}
+	}
+
+	&__item-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.item-wrap {
+	max-width: 360px;
+	min-height: 338px;
+	background-color: #ffffff;
+	margin: 0px 30px 30px 0px;
+	padding: 60px 40px;
+	&__icon {
+		margin: 0px 0px 40px 0px;
+	}
+
+	&__title {
+		color: #323232;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 50px;
+	}
+
+	&__text {
+	}
+}
+
+// software skill
+.skill {
+	background-color: #00b894;
+
+	&__body {
+		padding: 145px 0px 145px 0px;
+	}
+
+	&__title {
+		color: #ffffff;
+		font-size: 47px;
+		font-weight: 700;
+		text-align: center;
+		margin: 0px 0px 84px 0px;
+		& span {
+			background: url("../../img/skill/Rectangle_3_copy_3.png") center 80% no-repeat;
+		}
+	}
+
+	&__colum {
+		display: flex;
+		flex-wrap: wrap;
+		@media (max-width: $md1+px) {
+			justify-content: center;
+		}
+	}
+}
+
+.colum-item {
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		color: #ffffff;
+		font-size: 16px;
+		line-height: 50px;
+	}
+
+	&__bottom {
+		width: 500px;
+		height: 5px;
+		background-color: #4ccdb4;
+	}
+
+	&__bg-bottom {
+		height: 5px;
+		background-color: #ffffff;
+		& img {
+			position: relative;
+			bottom: 100%;
+			left: 97%;
+		}
+	}
+}
+
+.colum {
+	&__left {
+		flex: 0 1 50%;
+		max-width: 500px;
+		margin: 0px 170px 0px 0px;
+		@media (max-width: $md1+px) {
+			margin: 0;
+		}
+	}
+
+	&__photoshop {
+		max-width: 92%;
+	}
+
+	&__Illustrator {
+		max-width: 85%;
+	}
+
+	&__After-Effect {
+		max-width: 97%;
+	}
+
+	&__right {
+		flex: 0 1 50%;
+		max-width: 500px;
+	}
+
+	&__Html {
+		max-width: 90%;
+	}
+
+	&__CSS {
+		max-width: 85%;
+	}
+
+	&__Javasccript {
+		max-width: 72%;
+	}
+}
+
+.Photoshop-bg {
+	max-width: 92%;
+}
+.Illustrator-bg {
+	max-width: 85%;
+}
+.After-Effect-bg {
+	max-width: 97%;
+}
+.Html-bg {
+	max-width: 90%;
+}
+.CSS-bg {
+	max-width: 85%;
+}
+.Javasccript-bg {
+	max-width: 72%;
+}
+
+// freedback
+
+.feedback {
+	&__body {
+		padding: 140px 0px;
+	}
+
+	&__title {
+		color: #323232;
+		font-size: 48px;
+		font-weight: 700;
+		text-align: center;
+		& span {
+			background: url("../../img/service/Text_bg.png") center 84% no-repeat;
+		}
+		margin: 0px 0px 40px 0px;
+	}
+
+	&__item {
+		max-width: 535px;
+		min-height: 396px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		padding: 30px 50px;
+		@media (max-width: $md1+px) {
+			margin: 0px 0px 30px 0px;
+		}
+	}
+
+	&__text {
+		margin: 27px 0px 47px 0px;
+	}
+
+	&__bottom {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__row {
+		flex-wrap: wrap;
+		justify-content: space-between;
+		display: flex;
+		@media (max-width: $md1+px) {
+			justify-content: center;
+		}
+	}
+}
+
+.bottom {
+	&__icon {
+		width: 70px;
+		height: 70px;
+		background-color: #828282;
+		border-radius: 50%;
+	}
+
+	&__who {
+		justify-content: bottom;
+		margin: 0px 0px 0px 15px;
+		flex: 1 1 auto;
+	}
+
+	&__who-name {
+		color: #707070;
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 700;
+	}
+
+	&__who-poss {
+		color: #707070;
+		font-size: 15px;
+		line-height: 22px;
+	}
+
+	&__signature {
+		color: #707070;
+		font-family: "Mistral";
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 22px;
+	}
+}
+
+// form
+
+.conntact {
+	background: linear-gradient(to right, #929292 44%, #fff 0%);
+
+	&__body {
+		display: flex;
+		justify-content: flex-end;
+		padding: 50px 0px;
+	}
+
+	&__items {
+		flex: 0 0 64%;
+		display: flex;
+		flex-direction: column;
+		padding: 0px 0px 0px 100px;
+	}
+
+	&__title {
+		color: #323232;
+		font-size: 22px;
+		margin: 0px 0px 55px 0px;
+		position: relative;
+		padding: 0px 0px 15px 0px;
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			width: 50px;
+			height: 2px;
+			background-color: #00b894;
+			left: 0;
+		}
+	}
+
+	&__Text {
+		color: #323232;
+		font-size: 36px;
+		font-weight: 700;
+		line-height: 50px;
+		& span {
+			background: url("../../img/form/Line_2.png") center 84% no-repeat;
+		}
+	}
+
+	&__input-questions {
+		margin: 80px 0px 0px 0px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.input-questions {
+	&__name {
+		padding: 5px;
+		width: 285px;
+		height: 45px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		font-family: "PT Sans";
+		font-size: 16px;
+		font-weight: 700;
+		margin: 0px 30px 0px 0px;
+	}
+
+	&__email {
+		padding: 5px;
+		width: 285px;
+		height: 45px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		font-family: "PT Sans";
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	&__btn {
+		margin: 15px 0px 0px 0px;
+	}
+	&__textarea {
+		padding: 10px;
+		margin: 15px 0px 0px 0px;
+		resize: none;
+		min-width: 600px;
+		height: 150px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		font-family: "PT Sans";
+		font-size: 16px;
+		font-weight: 700;
+	}
+}
+.btn {
+	color: #ffffff;
+	font-family: "PT Sans";
+	font-size: 16px;
+	line-height: 30px;
+	width: 156px;
+	height: 45px;
+	background-color: #00b894;
+}

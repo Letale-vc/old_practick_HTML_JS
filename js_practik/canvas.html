@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Canvas</title>
+</head>
+
+<body>
+
+	<canvas id="canvas" width="1200" height="1200"></canvas>
+	<script>
+
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		var circle = function (x, y, radius, fillCircle) {
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+			if (fillCircle === true) {
+				ctx.fill();
+			} else {
+				ctx.stroke();
+			}
+		};
+		ctx.lineWidth = 4;
+
+
+		function drawS(distans1, distans2) {
+
+			ctx.fillStyle = "black"
+			circle(83 + distans1, 53 + distans2, 50, false)
+			circle(83 + distans1, 183 + distans2, 80, false)
+			circle(68 + distans1, 38 + distans2, 5, true)
+			circle(98 + distans1, 38 + distans2, 5, true)
+			circle(83 + distans1, 183 + distans2, 5, true)
+			circle(83 + distans1, 153 + distans2, 5, true)
+			circle(83 + distans1, 213 + distans2, 5, true)
+			ctx.fillStyle = "orange"
+			circle(83 + distans1, 53 + distans2, 5, true)
+
+		}
+
+
+
+
+
+
+	</script>
+</body>
+
+</html>

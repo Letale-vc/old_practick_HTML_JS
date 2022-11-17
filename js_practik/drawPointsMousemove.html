@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Canvas</title>
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+	<canvas id="canvas" width="1200" height="1200"></canvas>
+	<script>
+
+
+
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		var fillCircle = true
+		var radius = 3
+
+
+		var circle = function (x, y, radius, fillCircle) {
+			ctx.beginPath();
+			ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+
+			ctx.stroke();
+		};
+
+		$('canvas').mousemove(function (event) {
+			ctx.lineTo(event.pageX, event.pageY)
+			ctx.stroke();
+		});
+
+
+
+	</script>
+</body>
+
+</html>

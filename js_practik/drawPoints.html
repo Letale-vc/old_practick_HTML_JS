@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Canvas</title>
+</head>
+
+<body>
+
+	<canvas id="canvas" width="1200" height="1200"></canvas>
+	<script>
+
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+
+		var k = 0
+		var drawPoints = function (masive) {
+			ctx.beginPath();
+			ctx.moveTo(masive[0][0], masive[0][1])
+
+			for (var i = 0; i < masive.length; i++) {
+				ctx.lineTo(masive[i][0], masive[i][1])
+				ctx.stroke();
+			}
+
+		};
+		ctx.lineWidth = 4;
+
+
+		ctx.fillStyle = "Blue";
+		var points = [[50, 50], [50, 100], [100, 100], [100, 50], [50, 50]];
+		drawPoints(points);
+		var mysteryPoints = [[50, 50], [50, 100], [25, 120], [100, 50],
+		[70, 90], [100, 90], [70, 120]];
+		drawPoints(mysteryPoints);
+
+
+
+
+
+	</script>
+</body>
+
+</html>
